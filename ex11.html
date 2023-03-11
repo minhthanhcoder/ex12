@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #container {
+            margin: 30px auto;
+            text-align: center;
+            position: relative;
+        }
+        #no {
+            position: absolute;
+        }
+    </style>
+    <div id="container">
+        <h3 id="heading">Do you love me ?</h3>
+        <input type="button" value="Yes" id="yes" onclick="yesFunction()">
+        <input type="button" value="No" id="no" onmouseover="noFunction()">
+        <p id="result"></p>
+
+    </div>
+    <script>
+        let yesBtn = document.getElementById('yes');
+        yesBtn.addEventListener('click', yesFunction);
+        let noBtn = document.getElementById("no").addEventListener("mouseover", noFunction);
+        
+
+        function yesFunction() {
+            document.getElementById('result').innerHTML = ('I love you too')
+        }
+
+        function noFunction() {
+         let x = Math.round(Math.random() * window.innerWidth);
+         let y = Math.round(Math.random() * window.innerHeight);
+          document.getElementById('no').style.left = x + 'px';
+          document.getElementById('no').style.right = y + 'px';
+        }
+    </script>
+</body>
+</html>
